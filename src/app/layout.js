@@ -1,5 +1,3 @@
-// This is the mothership
-
 import Link from "next/link";
 import "./global.css";
 

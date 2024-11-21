@@ -1,4 +1,5 @@
 // This is my Home page
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -20,7 +21,9 @@ export default function HomePage() {
         post today, and let’s make this island feel like home! 🏝️
       </p>
       <h3>Find posts here!</h3>
-      <button>ENTER</button>
+      <Link href="/posts">
+        <button>ENTER</button>
+      </Link>
     </div>
   );
 }
