@@ -1,5 +1,8 @@
 // This page shows all the posts
 
+// ADD SORT if I visit /posts?sort=desc, then the searchParams is equal to:
+// { sort: "desc" }
+
 import Link from "next/link";
 import { db } from "@/utils/db";
 
@@ -29,14 +32,3 @@ export default async function PostsPage() {
     </div>
   );
 }
-
-// if I visit /posts?sort=desc, then the searchParams is equal to:
-// { sort: "desc" }
-
-//<Link href="/new-post">
-//<button>Add a Comment</button>
-//</Link>
-
-//<Link href={"posts/NewPostPage"}>
-//  <button>Add a new post</button>
-//</Link>
