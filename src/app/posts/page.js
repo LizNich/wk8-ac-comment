@@ -6,13 +6,21 @@
 import Link from "next/link";
 import { db } from "@/utils/db";
 
-export default async function PostsPage() {
+export default async function PostsPage({ searchParams }) {
   const result = await db.query(`SELECT * FROM posts`);
   const posts = result.rows;
+
+  if (searchParams.sort === "asc") {
+    posts.sort((a, b) => a.villager.localeCompare(b.villager)); // A-Z
+  } else if (searchParams.sort === "desc") {
+    posts.sort((a, b) => b.villager.localeCompare(a.villager)); // Z-A
+  }
 
   return (
     <div>
       <h2>Posts</h2>
+      <Link href="/posts?sort=asc">Sort ascending</Link> |{" "}
+      <Link href="/posts?sort=desc">Sort descending</Link>
       <ul>
         {posts.map((post) => {
           return (
