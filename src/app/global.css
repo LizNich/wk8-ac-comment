@@ -11,13 +11,14 @@
 }
 
 * {
-  font-family: monospace;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 1%;
+  font-size: large;
 }
 
 body {
   height: 100vh;
-  background-image: url(../assets/1128604.jpg);
+  /*background-image: url(../assets/1128604.jpg);*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

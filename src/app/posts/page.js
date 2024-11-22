@@ -1,39 +1,42 @@
 // This page shows all the posts
 
 import Link from "next/link";
+import { db } from "@/utils/db";
 
-export default async function PostPage({ searchParams }) {
-  console.log("searchParams", searchParams);
-  const response = await fetch(
-    "https://wk8-ac-comment-kgy50keiv-liz-nicholsons-projects.vercel.app/"
-  );
-  const posts = await response.json();
-
-  if (searchParams.sort === "asc") {
-    posts.sort((a, b) => a.title.localeCompare(b.title)); // A-Z
-  } else if (searchParams.sort === "desc") {
-    posts.sort((a, b) => b.title.localeCompare(a.title)); // Z-A
-  }
+export default async function PostsPage() {
+  const result = await db.query(`SELECT * FROM posts`);
+  const posts = result.rows;
 
   return (
     <div>
       <h2>Posts</h2>
-      <Link href="/posts?sort=asc">Sort ascending</Link> |{" "}
-      <Link href="/posts?sort=desc">Sort descending</Link>
       <ul>
         {posts.map((post) => {
           return (
-            <Link key={posts.id} href={`/posts/${posts.id}`}>
-              <h3>{posts.username}</h3>
-              <p>{posts.villager}</p>
-              <p>{posts.reason}</p>
-            </Link>
+            <li key={post.id}>
+              <Link href={`/posts/${post.id}`}>
+                <h3>{post.username}</h3>
+                <p>{post.villager}</p>
+                <p>{post.reason}</p>
+              </Link>
+            </li>
           );
         })}
       </ul>
+      <Link href="/posts/new">
+        <button>Add a new post</button>
+      </Link>
     </div>
   );
 }
 
 // if I visit /posts?sort=desc, then the searchParams is equal to:
 // { sort: "desc" }
+
+//<Link href="/new-post">
+//<button>Add a Comment</button>
+//</Link>
+
+//<Link href={"posts/NewPostPage"}>
+//  <button>Add a new post</button>
+//</Link>

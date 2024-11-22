@@ -27,5 +27,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-//className="mb-auto h-10 bg-green-500"
