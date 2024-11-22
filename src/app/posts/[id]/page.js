@@ -1,6 +1,7 @@
 // This is the comments page with the ability to add comments
-import Link from "next/link";
 import { db } from "@/utils/db";
+import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default async function SinglePostsPage({ params }) {
   const { id } = params;
@@ -38,6 +39,9 @@ export default async function SinglePostsPage({ params }) {
           </li>
         ))}
       </ul>
+      <Link href={`/posts/${post.id}/comment`}>
+        <button>The button goes to the right page</button>
+      </Link>
     </div>
   );
 }
