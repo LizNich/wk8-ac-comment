@@ -28,7 +28,7 @@ export default async function SinglePostsPage({ params }) {
           </Link>
         </li>
       </ul>
-      <h3>Comments returned from supabase</h3>
+      <h3>Comments</h3>
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>

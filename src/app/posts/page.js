@@ -1,10 +1,9 @@
-// This page shows all the posts
-
-// ADD SORT if I visit /posts?sort=desc, then the searchParams is equal to:
-// { sort: "desc" }
+// This page shows all the posts with a sort option
+// and a delete post button
 
 import Link from "next/link";
 import { db } from "@/utils/db";
+import { DeletePost } from "@/components/delete";
 
 export default async function PostsPage({ searchParams }) {
   const result = await db.query(`SELECT * FROM posts`);
@@ -26,9 +25,10 @@ export default async function PostsPage({ searchParams }) {
           return (
             <li key={post.id}>
               <Link href={`/posts/${post.id}`}>
-                <h3>{post.username}</h3>
+                <p> {post.username}</p>
                 <p>{post.villager}</p>
                 <p>{post.reason}</p>
+                <DeletePost />
               </Link>
             </li>
           );

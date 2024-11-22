@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
               <Link href="/posts">Posts</Link>
             </nav>
           </header>
-          <main className="mb-auto h-10 bg-green-500">{children}</main>
+          <main>{children}</main>
           <footer className="h-10 bg-blue-500 text-center">
             <p>&copy; The Animal Crossing Collective 2024</p>
           </footer>
