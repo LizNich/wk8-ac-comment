@@ -2,8 +2,9 @@
 import { db } from "@/utils/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+//import { NewCommentPage } from "@/components/commentform"; //correct
 
-export default async function SinglePostsPage({ params }) {
+export default async function SinglePostPage({ params }) {
   const { id } = params;
 
   // = the post
@@ -40,7 +41,7 @@ export default async function SinglePostsPage({ params }) {
         ))}
       </ul>
       <Link href={`/posts/${post.id}/comment`}>
-        <button>The button goes to the right page</button>
+        <button>THIS GOES TO SEPERATE ADD COMMENT PAGE</button>
       </Link>
     </div>
   );

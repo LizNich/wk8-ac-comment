@@ -1,9 +1,9 @@
 // This page shows all the posts with a sort option
-// and a delete post button
+//
+// and imports a delete post button
 
 import Link from "next/link";
 import { db } from "@/utils/db";
-import { DeletePost } from "@/components/delete";
 
 export default async function PostsPage({ searchParams }) {
   const result = await db.query(`SELECT * FROM posts`);
@@ -28,7 +28,6 @@ export default async function PostsPage({ searchParams }) {
                 <p> {post.username}</p>
                 <p>{post.villager}</p>
                 <p>{post.reason}</p>
-                <DeletePost />
               </Link>
             </li>
           );

@@ -1,4 +1,5 @@
 // This is the form to allow users to make a new post
+
 import { db } from "@/utils/db";
 import { redirect } from "next/navigation";
 
@@ -19,17 +20,18 @@ export default function NewPostPage() {
   }
 
   return (
-    <div>
+    <div className="bg-primary">
       <h2>Add New Post - add rules blurb</h2>
+
       <form action={handleAddPost}>
         <label>Username</label>
         <input name="username" placeholder="username" />
 
         <label>Favourite Villager</label>
-        <input name="villager" placeholder="villager" />
+        <input name="villager" placeholder="change to dropdown using compo" />
 
         <label>Reason</label>
-        <input name="reason" type="reason" />
+        <input name="reason" placeholder="reason" />
 
         <button>Add Post</button>
       </form>
