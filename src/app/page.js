@@ -9,7 +9,7 @@ export default function HomePage() {
       </h1>
       <section
         className="bg-[#fffffa] bg-opacity-70 text-black text-left mt-4 p-4 w-full max-w-3xl rounded-md shadow-lg
-       "
+      "
       >
         <p>
           Love your villagers? So do we! This is the place to share your

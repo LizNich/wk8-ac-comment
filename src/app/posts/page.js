@@ -1,6 +1,5 @@
 // This page shows all the posts with a sort option
-//
-// and imports a delete post button
+// and imports a delete post button that doesn't work yet
 
 import Link from "next/link";
 import { db } from "@/utils/db";
@@ -29,7 +28,7 @@ export default async function PostsPage({ searchParams }) {
 
         <div>
           <Link href="/posts/new">
-            <button className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition text-md font-bold flex justify-center items-center w-48">
+            <button className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition text-1xl font-bold flex justify-center items-center w-48">
               Add a new post
             </button>
           </Link>
@@ -61,5 +60,3 @@ export default async function PostsPage({ searchParams }) {
     </div>
   );
 }
-
-// note - <Link href={`/posts/${post.id}`}> = sets direction for all buttons showing in the Link

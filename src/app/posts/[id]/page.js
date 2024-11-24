@@ -1,8 +1,9 @@
-// This is the comments page with the ability to add comments
+// This is the comments page with a link to add a new comment
 import { db } from "@/utils/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-//import { NewCommentPage } from "@/components/commentform"; //correct
+//import { NewCommentPage } from "@/components/commentform"; //correct but couldn't get this to work
+t;
 
 export default async function SinglePostPage({ params }) {
   const { id } = params;
@@ -41,7 +42,7 @@ export default async function SinglePostPage({ params }) {
           {comments.map((comment) => (
             <li key={comment.id}>
               <p>
-                {comment.username} - {comment.comment}
+                {comment.comment} -- {comment.username}
               </p>
             </li>
           ))}
@@ -55,10 +56,3 @@ export default async function SinglePostPage({ params }) {
     </div>
   );
 }
-
-//<p>
-//<strong>Member: </strong> {post.username}
-//</p>
-//<p>
-// <strong>Favourite Villager: </strong> {post.villager}
-//</p>

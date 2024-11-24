@@ -1,6 +1,8 @@
 // This component goes in the posts page.js = App/posts/page.js
-"use client";
 
+// NOTE: currently the button is not active
+
+"use client";
 import { useRouter } from "next/navigation";
 
 export function DeletePost({ postID }) {
@@ -26,6 +28,3 @@ export function DeletePost({ postID }) {
     </div>
   );
 }
-
-//import Image from 'next/image';
-//import myImage from '/public/my-image.png'; // Replace with your image path

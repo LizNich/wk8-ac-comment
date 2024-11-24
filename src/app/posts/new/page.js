@@ -21,13 +21,13 @@ export default function NewPostPage() {
 
   return (
     <div className="max-w-lg mx-auto p-6">
-      <h2 className="bg-[#fffffa] bg-opacity-20 text-black text-center mt-4 p-2 w-full text-2xl font-bold mb-10">
+      <h2 className="bg-[#fffffa] bg-opacity-70 text-black text-center mt-4 p-2 w-full text-2xl font-bold mb-10">
         <strong>Add a new Post</strong>
       </h2>
 
       <form onSubmit={handleAddPost} className="space-y-4">
         <div>
-          <label htmlFor="username" className="block font-medium mb-2">
+          <label className="block font-medium mb-2">
             <strong>Username:</strong>
           </label>
           <input
@@ -38,7 +38,7 @@ export default function NewPostPage() {
           />
         </div>
         <div>
-          <label htmlFor="villager" className="block font-medium mb-2">
+          <label className="block font-medium mb-2">
             <strong>Favourite Villager:</strong>
           </label>
           <input
@@ -49,7 +49,7 @@ export default function NewPostPage() {
           />
         </div>
         <div>
-          <label htmlFor="reason" className="block font-medium mb-2">
+          <label className="block font-medium mb-2">
             <strong>Why?</strong>
           </label>
           <input

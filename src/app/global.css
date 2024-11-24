@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/*:root {
   --primary-color: #9dffb0;
   --secondary-color: #81f1f7;
   --accent-color: #fffffa;
   --highlight-color: #c48d3f;
   --block-color: #fff563;
-}
+}*/
 
 * {
   margin-left: 1%;
@@ -17,7 +17,6 @@
 }
 
 body {
-  height: 100vh;
   background-image: url(../assets/background_c.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -39,20 +38,3 @@ button {
 button:active {
   transform: scale(0.9);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} 
-
-body {
-  color: aliceblue;
-  background: tomato;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-p {
-  font-family: monospace;
-}*/
