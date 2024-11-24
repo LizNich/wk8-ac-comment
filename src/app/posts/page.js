@@ -18,37 +18,46 @@ export default async function PostsPage({ searchParams }) {
 
   return (
     <div>
-      <Link href="/posts?sort=asc">Sort A-Z by Villager</Link> |{" "}
-      <Link href="/posts?sort=desc">Sort Z-A by Villager</Link>
-      <Link href="/posts/new">
-        <button>Add a new post</button>
-      </Link>
-      <h2>
-        <strong> So... Who is your favourite Villager... and why? </strong>
+      <div className="flex justify-between items-center w-full max-w-2xl mx-auto p-4">
+        <div className="flex">
+          <Link href="/posts?sort=asc">Sort A-Z by Villager</Link>
+          <span>|</span>
+          <Link href="/posts?sort=desc">Sort Z-A by Villager</Link>
+        </div>
+
+        <div> {"  "} </div>
+
+        <div>
+          <Link href="/posts/new">
+            <button className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition text-md font-bold flex justify-center items-center w-48">
+              Add a new post
+            </button>
+          </Link>
+        </div>
+      </div>
+      <h2 className="bg-[#fffffa] bg-opacity-70 text-black text-center mt-4 p-2 w-full text-2xl font-bold">
+        Who is your favourite Villager... and why?
       </h2>
-      <ul>
-        {posts.map((post) => {
-          return (
-            <li key={post.id}>
-              <Link href={`/posts/${post.id}`}>
-                <p>
-                  <strong>Username: </strong> {post.username}
-                </p>
-                <p>
-                  <strong>Favourite Villager: </strong> {post.villager}
-                </p>
-                <p>
-                  <strong>Why? </strong> {post.reason}
-                </p>
-                <p>
-                  <strong>Click for Comments ❤️ </strong> {}
-                </p>
-              </Link>
-              <DeletePost />
-            </li>
-          );
-        })}
-      </ul>
+      <section className="post-container px-4 py-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {posts.map((post) => {
+            return (
+              <li
+                key={post.id}
+                className="bg-blue-500 text-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <Link href={`/posts/${post.id}`}>
+                  <p> {post.username} </p>
+                  <p>Favourite Villager - {post.villager}</p>
+                  <p>Why? - {post.reason}</p>
+                  <p className="text-gray-300">Click for Comments ❤️</p>
+                </Link>
+                <DeletePost />
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   );
 }

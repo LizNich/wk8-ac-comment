@@ -20,28 +20,48 @@ export default function NewPostPage() {
   }
 
   return (
-    <div className="bg-primary">
-      <h2>
-        {" "}
+    <div className="max-w-lg mx-auto p-6">
+      <h2 className="bg-[#fffffa] bg-opacity-20 text-black text-center mt-4 p-2 w-full text-2xl font-bold mb-10">
         <strong>Add a new Post</strong>
       </h2>
 
-      <form action={handleAddPost}>
-        <label>
-          <strong> Username:</strong>
-        </label>
-        <input name="username" placeholder="Your Name" />
-
-        <label>
-          <strong> Favourite Villager: </strong>Favourite Villager
-        </label>
-        <input name="villager" placeholder="Favourite Villager" />
-
-        <label>
-          <strong>Why? </strong>
-        </label>
-        <input name="reason" placeholder="Why the villager is your favourite" />
-        <button>Submit</button>
+      <form onSubmit={handleAddPost} className="space-y-4">
+        <div>
+          <label htmlFor="username" className="block font-medium mb-2">
+            <strong>Username:</strong>
+          </label>
+          <input
+            id="username"
+            name="username"
+            placeholder="Your Name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          />
+        </div>
+        <div>
+          <label htmlFor="villager" className="block font-medium mb-2">
+            <strong>Favourite Villager:</strong>
+          </label>
+          <input
+            id="villager"
+            name="villager"
+            placeholder="Favourite Villager"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          />
+        </div>
+        <div>
+          <label htmlFor="reason" className="block font-medium mb-2">
+            <strong>Why?</strong>
+          </label>
+          <input
+            id="reason"
+            name="reason"
+            placeholder="Why the villager is your favourite"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          />
+        </div>
+        <button className="bg-gray-500 text-white px-24 py-2 rounded-lg hover:bg-blue-600 transition text-2xl font-bold flex justify-center items-center ">
+          Submit
+        </button>
       </form>
     </div>
   );

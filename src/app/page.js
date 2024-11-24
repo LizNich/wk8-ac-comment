@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="flex flex-col items-center min-h-screen p-2">
-      <h1 className=" bg-[#fffffa] bg-opacity-70 text-black text-center mt-4 p-4 w-full ">
-        <strong> Welcome to The Animal Crossing Collective </strong>
+      <h1 className=" bg-[#fffffa] bg-opacity-70 text-black text-center mt-4 p-4 w-full text-3xl font-bold">
+        Welcome to The Animal Crossing Collective
       </h1>
       <section
         className="bg-[#fffffa] bg-opacity-70 text-black text-left mt-4 p-4 w-full max-w-3xl rounded-md shadow-lg
@@ -47,7 +47,7 @@ export default function HomePage() {
         </ul>
       </section>
       <Link href="/posts">
-        <button className="bg-grey-500 text-white text-center px-24 py-2 rounded-lg  hover:bg-blue-600 transition">
+        <button className="bg-gray-500 text-white px-24 py-2 rounded-lg hover:bg-blue-600 transition text-2xl font-bold flex justify-center items-center">
           ENTER
         </button>
       </Link>

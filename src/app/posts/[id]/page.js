@@ -19,41 +19,46 @@ export default async function SinglePostPage({ params }) {
   const comments = commentsResult.rows; // = all rows
 
   return (
-    <div>
-      <h2>
-        {post.username}&apos;s favourite villager is ...🍃
-        <strong>{post.villager}</strong>🍃
-      </h2>
-      <ul>
-        <li key={post.id}>
-          <Link href={`/posts/${post.id}`}>
-            <p>
-              <strong>Member: </strong> {post.username}
-            </p>
-            <p>
-              <strong>Favourite Villager: </strong> {post.villager}
-            </p>
-            <p>
-              <strong>Why? </strong> {post.reason}
-            </p>
-          </Link>
-        </li>
-      </ul>
-      <h3>
-        <strong>Comments:</strong>
-      </h3>
-      <ul>
-        {comments.map((comment) => (
-          <li key={comment.id}>
-            <p>
-              {comment.username} - {comment.comment}
-            </p>
+    <div className="flex justify-center items-center">
+      <div>
+        <h2 className="bg-[#fffffa] bg-opacity-70 text-black text-center mt-6 p-2 w-full text-2xl font-bold mb-0">
+          {post.username}&apos;s favourite villager is ...🍃
+          {post.villager}🍃
+        </h2>
+        <ul>
+          <li key={post.id}>
+            <Link href={`/posts/${post.id}`}>
+              <p className="bg-[#fffffa] bg-opacity-70 text-black text-left mt-0 p-2 w-full text-1xl font-bold mb-0">
+                Why? {post.reason}
+              </p>
+            </Link>
           </li>
-        ))}
-      </ul>
-      <Link href={`/posts/${post.id}/comment`}>
-        <button>Add a Comment</button>
-      </Link>
+        </ul>
+        <h3 className="text-black text-left  w-full text-1xl font-bold ">
+          Comments:
+        </h3>
+        <ul className="bg-blue-500 text-white p-6 rounded-lg shadow-lg ">
+          {comments.map((comment) => (
+            <li key={comment.id}>
+              <p>
+                {comment.username} - {comment.comment}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <Link href={`/posts/${post.id}/comment`}>
+          <button className="bg-gray-500 text-white w-64 py-2 rounded-lg hover:bg-blue-600 transition text-xl font-bold flex justify-center items-center">
+            Add a Comment
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
+
+//<p>
+//<strong>Member: </strong> {post.username}
+//</p>
+//<p>
+// <strong>Favourite Villager: </strong> {post.villager}
+//</p>

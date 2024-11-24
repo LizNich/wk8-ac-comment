@@ -17,7 +17,10 @@ export function DeletePost({ postID }) {
 
   return (
     <div>
-      <button onClick={() => deletePost(postID)}>
+      <button
+        onClick={() => deletePost(postID)}
+        className="bg-gray-500 text-white px-0 py-2 rounded-lg hover:bg-red-600 transition text-lg font-bold flex justify-center items-center"
+      >
         <strong>x</strong>
       </button>
     </div>
