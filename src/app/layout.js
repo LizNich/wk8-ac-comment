@@ -10,17 +10,17 @@ export const gluten = Gluten({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${gluten.className} `}>
+      <body className={`${gluten.className}`}>
         <div>
-          <header>
-            <nav>
-              <Link href="/">Welcome!</Link> |
+          <header className="bg-[#9DFFB0] text-black text-center mt-4 p-2">
+            <nav className="text-xl font-bold">
+              <Link href="/">Welcome Home!</Link> |
               <Link href="/posts">All Posts</Link> |
               <Link href="/posts/new">Add a New Post</Link>
             </nav>
           </header>
           <main>{children}</main>
-          <footer>
+          <footer className="bg-[#9DFFB0] text-black text-center mt-0 p-2 sticky">
             <p>&copy; The Animal Crossing Collective 2024</p>
           </footer>
         </div>
