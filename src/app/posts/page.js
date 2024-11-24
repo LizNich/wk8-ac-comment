@@ -18,29 +18,39 @@ export default async function PostsPage({ searchParams }) {
 
   return (
     <div>
-      <h2>Posts</h2>
-      <Link href="/posts?sort=asc">Sort ascending</Link> |{" "}
-      <Link href="/posts?sort=desc">Sort descending</Link>
+      <Link href="/posts?sort=asc">Sort A-Z by Villager</Link> |{" "}
+      <Link href="/posts?sort=desc">Sort Z-A by Villager</Link>
+      <Link href="/posts/new">
+        <button>Add a new post</button>
+      </Link>
+      <h2>
+        <strong> So... Who is your favourite Villager... and why? </strong>
+      </h2>
       <ul>
         {posts.map((post) => {
           return (
             <li key={post.id}>
               <Link href={`/posts/${post.id}`}>
-                <p>{post.username}</p>
-                <p>{post.villager}</p>
-                <p>{post.reason}</p>
-                <h3>Client Rendered Component</h3>
+                <p>
+                  <strong>Username: </strong> {post.username}
+                </p>
+                <p>
+                  <strong>Favourite Villager: </strong> {post.villager}
+                </p>
+                <p>
+                  <strong>Why? </strong> {post.reason}
+                </p>
+                <p>
+                  <strong>Click for Comments ❤️ </strong> {}
+                </p>
               </Link>
               <DeletePost />
             </li>
           );
         })}
       </ul>
-      <Link href="/posts/new">
-        <button>Add a new post</button>
-      </Link>
     </div>
   );
 }
 
-//<Link href={`/posts/${post.id}`}> = sets direction for all buttons showing in the Link
+// note - <Link href={`/posts/${post.id}`}> = sets direction for all buttons showing in the Link

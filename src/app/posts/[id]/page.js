@@ -20,17 +20,28 @@ export default async function SinglePostPage({ params }) {
 
   return (
     <div>
-      <h2>Post selected on previous page</h2>
+      <h2>
+        {post.username}&apos;s favourite villager is ...🍃
+        <strong>{post.villager}</strong>🍃
+      </h2>
       <ul>
         <li key={post.id}>
           <Link href={`/posts/${post.id}`}>
-            <h3>{post.username}</h3>
-            <p>{post.villager}</p>
-            <p>{post.reason}</p>
+            <p>
+              <strong>Member: </strong> {post.username}
+            </p>
+            <p>
+              <strong>Favourite Villager: </strong> {post.villager}
+            </p>
+            <p>
+              <strong>Why? </strong> {post.reason}
+            </p>
           </Link>
         </li>
       </ul>
-      <h3>Comments</h3>
+      <h3>
+        <strong>Comments:</strong>
+      </h3>
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>
@@ -41,7 +52,7 @@ export default async function SinglePostPage({ params }) {
         ))}
       </ul>
       <Link href={`/posts/${post.id}/comment`}>
-        <button>THIS GOES TO SEPERATE ADD COMMENT PAGE</button>
+        <button>Add a Comment</button>
       </Link>
     </div>
   );

@@ -6,10 +6,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="flex flex-col h-screen justify-between">
-          <header className="h-10 bg-red-500">
+          <header className="h-10  bg-red-500">
             <nav>
-              <Link href="/">Home</Link>
-              <Link href="/posts">Posts</Link>
+              <Link href="/">Welcome!</Link> |
+              <Link href="/posts">All Posts</Link> |
+              <Link href="/posts/new">Add a New Post</Link>
             </nav>
           </header>
           <main>{children}</main>

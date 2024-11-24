@@ -21,19 +21,27 @@ export default function NewPostPage() {
 
   return (
     <div className="bg-primary">
-      <h2>Add New Post - add rules blurb</h2>
+      <h2>
+        {" "}
+        <strong>Add a new Post</strong>
+      </h2>
 
       <form action={handleAddPost}>
-        <label>Username</label>
-        <input name="username" placeholder="username" />
+        <label>
+          <strong> Username:</strong>
+        </label>
+        <input name="username" placeholder="Your Name" />
 
-        <label>Favourite Villager</label>
-        <input name="villager" placeholder="change to dropdown using compo" />
+        <label>
+          <strong> Favourite Villager: </strong>Favourite Villager
+        </label>
+        <input name="villager" placeholder="Favourite Villager" />
 
-        <label>Reason</label>
-        <input name="reason" placeholder="reason" />
-
-        <button>Add Post</button>
+        <label>
+          <strong>Why? </strong>
+        </label>
+        <input name="reason" placeholder="Why the villager is your favourite" />
+        <button>Submit</button>
       </form>
     </div>
   );

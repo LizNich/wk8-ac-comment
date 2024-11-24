@@ -23,17 +23,21 @@ export default function CommentFormPage({ params }) {
   return (
     <div>
       <h1>
-        I would like to put this on the previous page - Add New Comment HERE
+        <strong> Add a new Comment </strong>
       </h1>
 
       <form action={handleAddComment}>
-        <label>Username</label>
-        <input name="username" placeholder="username" />
+        <label>
+          <strong> Username:</strong>
+        </label>
+        <input name="username" placeholder="Your Name" />
 
-        <label>Comment</label>
-        <input name="comment" placeholder="add comment" />
+        <label>
+          <strong> Comment:</strong>
+        </label>
+        <input name="comment" placeholder="Add Comment" />
 
-        <button>Add Comment</button>
+        <button>Post Comment</button>
       </form>
     </div>
   );
