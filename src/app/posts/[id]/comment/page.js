@@ -1,3 +1,6 @@
+// This is the new comment form - currently on a separate page
+// It adds a comment and returns to the previous page
+
 import { db } from "@/utils/db";
 import { redirect } from "next/navigation";
 

@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import { db } from "@/utils/db";
+import { DeletePost } from "@/components/DeletePost";
 
 export default async function PostsPage({ searchParams }) {
   const result = await db.query(`SELECT * FROM posts`);
@@ -25,10 +26,12 @@ export default async function PostsPage({ searchParams }) {
           return (
             <li key={post.id}>
               <Link href={`/posts/${post.id}`}>
-                <p> {post.username}</p>
+                <p>{post.username}</p>
                 <p>{post.villager}</p>
                 <p>{post.reason}</p>
+                <h3>Client Rendered Component</h3>
               </Link>
+              <DeletePost />
             </li>
           );
         })}
@@ -39,3 +42,5 @@ export default async function PostsPage({ searchParams }) {
     </div>
   );
 }
+
+//<Link href={`/posts/${post.id}`}> = sets direction for all buttons showing in the Link
