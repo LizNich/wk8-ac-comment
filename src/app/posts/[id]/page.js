@@ -3,7 +3,6 @@ import { db } from "@/utils/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 //import { NewCommentPage } from "@/components/commentform"; //correct but couldn't get this to work
-t;
 
 export default async function SinglePostPage({ params }) {
   const { id } = params;

@@ -25,40 +25,30 @@ export default function NewPostPage() {
         <strong>Add a new Post</strong>
       </h2>
 
-      <form onSubmit={handleAddPost} className="space-y-4">
-        <div>
-          <label className="block font-medium mb-2">
-            <strong>Username:</strong>
-          </label>
-          <input
-            id="username"
-            name="username"
-            placeholder="Your Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-2">
-            <strong>Favourite Villager:</strong>
-          </label>
-          <input
-            id="villager"
-            name="villager"
-            placeholder="Favourite Villager"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-2">
-            <strong>Why?</strong>
-          </label>
-          <input
-            id="reason"
-            name="reason"
-            placeholder="Why the villager is your favourite"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-          />
-        </div>
+      <form action={handleAddPost} className="space-y-4">
+        <label className="block font-medium mb-2" v>
+          Username:
+        </label>
+        <input
+          name="username"
+          placeholder="Your Name"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+        />
+        <label className="block font-medium mb-2">
+          Favourite Villager: Favourite Villager
+        </label>
+        <input
+          name="villager"
+          placeholder="Favourite Villager"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+        />
+        <label className="block font-medium mb-2">Why?</label>
+        <input
+          name="reason"
+          placeholder="Why the villager is your favourite"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+        />
+
         <button className="bg-gray-500 text-white px-24 py-2 rounded-lg hover:bg-blue-600 transition text-2xl font-bold flex justify-center items-center ">
           Submit
         </button>
