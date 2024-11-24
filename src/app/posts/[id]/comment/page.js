@@ -1,26 +1,26 @@
 import { db } from "@/utils/db";
 import { redirect } from "next/navigation";
 
-export default function CommentFormPage() {
+export default function CommentFormPage({ params }) {
+  const post_id = params.id;
+
   async function handleAddComment(formData) {
     "use server";
 
     const username = formData.get("username");
     const comment = formData.get("comment");
 
-    await db.query(`INSERT INTO comments (username, comment) VALUES ($1, $2)`, [
-      username,
-      comment,
-    ]);
-
-    // redirect("/posts/${post.id}");
+    await db.query(
+      `INSERT INTO comments (username, comment, post_id) VALUES ($1, $2, $3)`,
+      [username, comment, post_id]
+    );
+    redirect(`/posts/${post_id}`);
   }
 
   return (
     <div>
       <h1>
-        I would like to put this on the previous page Add New Comment HERE on a
-        seperate page
+        I would like to put this on the previous page - Add New Comment HERE
       </h1>
 
       <form action={handleAddComment}>
