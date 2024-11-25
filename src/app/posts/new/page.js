@@ -34,9 +34,7 @@ export default function NewPostPage() {
           placeholder="Your Name"
           className="w-full px-4 py-2 border border-gray-300 rounded-lg"
         />
-        <label className="block font-medium mb-2">
-          Favourite Villager: Favourite Villager
-        </label>
+        <label className="block font-medium mb-2">Favourite Villager:</label>
         <input
           name="villager"
           placeholder="Favourite Villager"

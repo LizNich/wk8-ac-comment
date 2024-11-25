@@ -32,16 +32,12 @@ export default function HomePage() {
             villager? Or maybe you&apos;re intrigued by one you haven&apos;t met
             yet? Join the conversation!
           </ul>
-          <ul>
-            ❤️ Spread the love &mdash; Celebrate everyone&apos;s favourite
-            characters and discover new ones to adore.
-          </ul>
           <p>
             🍃 Let&apos;s keep it cozy and kind—just like Animal Crossing
             itself! 🍃
           </p>
           <p className="mt-4">
-            There are 413 villagers to chose from so start your first post
+            There are many villagers to chose from so start your first post
             today, and let&apos;s make this island feel like home! 🏝️
           </p>
         </ul>
